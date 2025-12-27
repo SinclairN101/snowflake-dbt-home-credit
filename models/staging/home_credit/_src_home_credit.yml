@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: home_credit
+    database: dbt_home_credit
+    schema: RAW
+    tables:
+      - name: application
+      - name: bureau
+      - name: previous_application
+      - name: credit_card_balance
+      - name: pos_cash_balance

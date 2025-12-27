@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_application
+    description: >
+      Staged loan application data from the Home Credit dataset.
+      One row per loan application with cleaned and standardized fields.
+
+    columns:
+      - name: customer_id
+        description: "{{ doc('stg_application__customer_id') }}"
+        tests:
+          - not_null
+          - unique
+      - name: contract_type
+        description: "{{ doc('stg_application__contract_type') }}"
+      - name: credit_amount
+        description: "{{ doc('stg_application__credit_amount') }}"
+      - name: annuity_amount
+        description: "{{ doc('stg_application__annuity_amount') }}"
+      - name: goods_price
+        description: "{{ doc('stg_application__goods_price') }}"
+      - name: annual_income
+        description: "{{ doc('stg_application__annual_income') }}"
+      - name: income_type
+        description: "{{ doc('stg_application__income_type') }}"
+      - name: occupation_type
+        description: "{{ doc('stg_application__occupation_type') }}"
+      - name: education_level
+        description: "{{ doc('stg_application__education_level') }}"
+      - name: family_status
+        description: "{{ doc('stg_application__family_status') }}"
+      - name: housing_type
+        description: "{{ doc('stg_application__housing_type') }}"
+      - name: family_member_count
+        description: "{{ doc('stg_application__family_member_count') }}"
+      - name: age_years
+        description: "{{ doc('stg_application__age_years') }}"
+      - name: employment_years
+        description: "{{ doc('stg_application__employment_years') }}"
+      - name: ext_score_1
+        description: "{{ doc('stg_application__ext_score_1') }}"
+      - name: ext_score_2
+        description: "{{ doc('stg_application__ext_score_2') }}"
+      - name: ext_score_3
+        description: "{{ doc('stg_application__ext_score_3') }}"
+      - name: owns_car
+        description: "{{ doc('stg_application__owns_car') }}"
+      - name: owns_real_estate
+        description: "{{ doc('stg_application__owns_real_estate') }}"
+      - name: defaulted
+        description: "{{ doc('stg_application__defaulted') }}"
+        tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
