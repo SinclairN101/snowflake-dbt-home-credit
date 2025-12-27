@@ -141,3 +141,45 @@ Indicates whether the loan defaulted.
 A value of 1 represents default, and 0 represents no default.
 
 {% enddocs %}
+
+
+{% docs stg_bureau__bureau_id %}
+
+Unique identifier for a credit record in the bureau dataset.
+
+{% enddocs %}
+
+
+{% docs stg_bureau__customer_id %}
+
+Customer identifier linking bureau records to loan applications.
+
+{% enddocs %}
+
+
+{% docs stg_bureau__credit_status %}
+
+Indicates whether the credit account is currently active or closed.
+
+{% enddocs %}
+
+
+{% docs stg_bureau__credit_amount %}
+
+Total credit amount reported for the bureau record.
+
+{% enddocs %}
+
+
+{% docs stg_bureau__credit_amount_debt %}
+
+Outstanding debt amount for the credit account.
+
+{% enddocs %}
+
+{% docs stg_bureau__credit_prolong_count %}
+
+Number of times the repayment period for a credit account was extended.
+A higher value can indicate repayment difficulty or increased credit risk.
+
+{% enddocs %}

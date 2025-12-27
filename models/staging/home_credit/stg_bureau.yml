@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_bureau
+    description: >
+      Staged credit bureau records for customers.
+      One row per reported credit account.
+
+    columns:
+      - name: bureau_id
+        description: "{{ doc('stg_bureau__bureau_id') }}"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "{{ doc('stg_bureau__customer_id') }}"
+        tests:
+          - not_null
+
+      - name: credit_status
+        description: "{{ doc('stg_bureau__credit_status') }}"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Active', 'Closed', 'Sold', 'Bad debt'] 
+      - name: credit_amount
+        description: "{{ doc('stg_bureau__credit_amount') }}"
+
+      - name: credit_amount_debt
+        description: "{{ doc('stg_bureau__credit_amount_debt') }}"
