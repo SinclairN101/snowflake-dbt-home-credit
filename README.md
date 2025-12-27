@@ -15,7 +15,7 @@ This project focuses on:
 ## Dataset
 
 This project uses the **Home Credit Default Risk** dataset from Kaggle:
-[https://www.kaggle.com/datasets/julianocosta/home-credit-default-risk](https://www.kaggle.com/datasets/julianocosta/home-credit-default-risk)
+[https://www.kaggle.com/datasets/julianocosta/home-credit](https://www.kaggle.com/datasets/julianocosta/home-credit)
 
 The dataset contains loan application data and customer credit history, representing a real-world lending and customer operations scenario.
 
