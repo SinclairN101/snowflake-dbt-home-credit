@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: stg_credit_card_balance
+    description: >
+      Staged monthly credit card balance records.
+      One row per credit card account per reporting month.
+
+    columns:
+      - name: prev_application_id
+        description: "{{ doc('prev_application_id') }}"
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+        tests:
+          - not_null
+
+      - name: months_from_application
+        description: "{{ doc('months_from_application') }}"
+
+      - name: contract_status
+        description: "{{ doc('contract_status') }}"
+
+      - name: balance_amount
+        description: "{{ doc('balance_amount') }}"
+
+      - name: credit_limit_amount
+        description: "{{ doc('credit_limit_amount') }}"
+
+      - name: principal_receivable_amount
+        description: "{{ doc('principal_receivable_amount') }}"
+
+      - name: receivable_amount
+        description: "{{ doc('receivable_amount') }}"
+
+      - name: total_receivable_amount
+        description: "{{ doc('total_receivable_amount') }}"
+
+      - name: minimum_payment_amount
+        description: "{{ doc('minimum_payment_amount') }}"
+
+      - name: current_payment_amount
+        description: "{{ doc('current_payment_amount') }}"
+
+      - name: total_payment_amount
+        description: "{{ doc('total_payment_amount') }}"
+
+      - name: atm_draw_amount
+        description: "{{ doc('atm_draw_amount') }}"
+
+      - name: pos_draw_amount
+        description: "{{ doc('pos_draw_amount') }}"
+
+      - name: other_draw_amount
+        description: "{{ doc('other_draw_amount') }}"
+
+      - name: total_draw_amount
+        description: "{{ doc('total_draw_amount') }}"
+
+      - name: atm_draw_count
+        description: "{{ doc('atm_draw_count') }}"
+
+      - name: pos_draw_count
+        description: "{{ doc('pos_draw_count') }}"
+
+      - name: other_draw_count
+        description: "{{ doc('other_draw_count') }}"
+
+      - name: total_draw_count
+        description: "{{ doc('total_draw_count') }}"
+
+      - name: matured_installment_count
+        description: "{{ doc('matured_installment_count') }}"
+
+      - name: days_past_due
+        description: "{{ doc('days_past_due') }}"
+
+      - name: days_past_due_at_default
+        description: "{{ doc('days_past_due_at_default') }}"

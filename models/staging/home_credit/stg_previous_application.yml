@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: stg_previous_application
+    description: >
+      Staged historical loan application records.
+      One row per previous loan application associated with a customer.
+
+    columns:
+      - name: prev_application_id
+        description: "{{ doc('prev_application_id') }}"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+        tests:
+          - not_null
+
+      - name: contract_type
+        description: "{{ doc('contract_type') }}"
+
+      - name: contract_status
+        description: "{{ doc('contract_status') }}"
+
+      - name: payment_type
+        description: "{{ doc('payment_type') }}"
+
+      - name: application_party_type
+        description: "{{ doc('application_party_type') }}"
+
+      - name: client_tenure_type
+        description: "{{ doc('client_tenure_type') }}"
+
+      - name: goods_category
+        description: "{{ doc('goods_category') }}"
+
+      - name: portfolio_type
+        description: "{{ doc('portfolio_type') }}"
+
+      - name: application_channel
+        description: "{{ doc('application_channel') }}"
+
+      - name: product_type
+        description: "{{ doc('product_type') }}"
+
+      - name: loan_purpose
+        description: "{{ doc('loan_purpose') }}"
+
+      - name: rejection_reason_code
+        description: "{{ doc('rejection_reason_code') }}"
+
+      - name: application_amount
+        description: "{{ doc('application_amount') }}"
+
+      - name: credit_amount
+        description: "{{ doc('credit_amount') }}"
+
+      - name: annuity_amount
+        description: "{{ doc('annuity_amount') }}"
+
+      - name: payment_count
+        description: "{{ doc('payment_count') }}"
+
+      - name: primary_interest_rate
+        description: "{{ doc('primary_interest_rate') }}"
+
+      - name: privileged_interest_rate
+        description: "{{ doc('privileged_interest_rate') }}"
+
+      - name: down_payment_rate_applied
+        description: "{{ doc('down_payment_rate_applied') }}"
+
+      - name: is_last_application_for_contract
+        description: "{{ doc('is_last_application_for_contract') }}"
+
+      - name: is_last_application_in_day
+        description: "{{ doc('is_last_application_in_day') }}"
+
+      - name: was_insured_on_approval
+        description: "{{ doc('was_insured_on_approval') }}"

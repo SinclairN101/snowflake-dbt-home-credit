@@ -3,29 +3,51 @@ version: 2
 models:
   - name: stg_bureau
     description: >
-      Staged credit bureau records for customers.
-      One row per reported credit account.
+      Staged credit bureau records.
+      One row per credit account reported for a customer.
 
     columns:
       - name: bureau_id
-        description: "{{ doc('stg_bureau__bureau_id') }}"
+        description: "{{ doc('bureau_id') }}"
         tests:
           - not_null
           - unique
 
       - name: customer_id
-        description: "{{ doc('stg_bureau__customer_id') }}"
+        description: "{{ doc('customer_id') }}"
         tests:
           - not_null
 
+      - name: credit_type
+        description: "{{ doc('credit_type') }}"
+
       - name: credit_status
-        description: "{{ doc('stg_bureau__credit_status') }}"
+        description: "{{ doc('credit_status') }}"
         tests:
           - accepted_values:
               arguments:
                 values: ['Active', 'Closed', 'Sold', 'Bad debt'] 
+
+      - name: credit_prolong_count
+        description: "{{ doc('credit_prolong_count') }}"
+
       - name: credit_amount
-        description: "{{ doc('stg_bureau__credit_amount') }}"
+        description: "{{ doc('credit_amount') }}"
 
       - name: credit_amount_debt
-        description: "{{ doc('stg_bureau__credit_amount_debt') }}"
+        description: "{{ doc('credit_amount_debt') }}"
+
+      - name: credit_amount_limit
+        description: "{{ doc('credit_amount_limit') }}"
+
+      - name: credit_amount_overdue
+        description: "{{ doc('credit_amount_overdue') }}"
+
+      - name: credit_age_years
+        description: "{{ doc('credit_age_years') }}"
+
+      - name: credit_end_date_years
+        description: "{{ doc('credit_end_date_years') }}"
+
+      - name: credit_close_date_years
+        description: "{{ doc('credit_close_date_years') }}"

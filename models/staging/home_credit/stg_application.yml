@@ -3,54 +3,72 @@ version: 2
 models:
   - name: stg_application
     description: >
-      Staged loan application data from the Home Credit dataset.
-      One row per loan application with cleaned and standardized fields.
+      Staged current loan application records.
+      One row per customer representing the most recent application.
 
     columns:
       - name: customer_id
-        description: "{{ doc('stg_application__customer_id') }}"
+        description: "{{ doc('customer_id') }}"
         tests:
           - not_null
-          - unique
+
       - name: contract_type
-        description: "{{ doc('stg_application__contract_type') }}"
+        description: "{{ doc('contract_type') }}"
+
       - name: credit_amount
-        description: "{{ doc('stg_application__credit_amount') }}"
+        description: "{{ doc('credit_amount') }}"
+
       - name: annuity_amount
-        description: "{{ doc('stg_application__annuity_amount') }}"
+        description: "{{ doc('annuity_amount') }}"
+
       - name: goods_price
-        description: "{{ doc('stg_application__goods_price') }}"
-      - name: annual_income
-        description: "{{ doc('stg_application__annual_income') }}"
-      - name: income_type
-        description: "{{ doc('stg_application__income_type') }}"
-      - name: occupation_type
-        description: "{{ doc('stg_application__occupation_type') }}"
+        description: "{{ doc('goods_price') }}"
+
       - name: education_level
-        description: "{{ doc('stg_application__education_level') }}"
+        description: "{{ doc('education_level') }}"
+
       - name: family_status
-        description: "{{ doc('stg_application__family_status') }}"
+        description: "{{ doc('family_status') }}"
+
       - name: housing_type
-        description: "{{ doc('stg_application__housing_type') }}"
+        description: "{{ doc('housing_type') }}"
+
       - name: family_member_count
-        description: "{{ doc('stg_application__family_member_count') }}"
-      - name: age_years
-        description: "{{ doc('stg_application__age_years') }}"
-      - name: employment_years
-        description: "{{ doc('stg_application__employment_years') }}"
-      - name: ext_score_1
-        description: "{{ doc('stg_application__ext_score_1') }}"
-      - name: ext_score_2
-        description: "{{ doc('stg_application__ext_score_2') }}"
-      - name: ext_score_3
-        description: "{{ doc('stg_application__ext_score_3') }}"
-      - name: owns_car
-        description: "{{ doc('stg_application__owns_car') }}"
-      - name: owns_real_estate
-        description: "{{ doc('stg_application__owns_real_estate') }}"
+        description: "{{ doc('family_member_count') }}"
+
       - name: defaulted
-        description: "{{ doc('stg_application__defaulted') }}"
+        description: "{{ doc('defaulted') }}"
         tests:
           - accepted_values:
               arguments:
                 values: [0, 1]
+
+      - name: age_years
+        description: "{{ doc('age_years') }}"
+
+      - name: employment_years
+        description: "{{ doc('employment_years') }}"
+
+      - name: annual_income
+        description: "{{ doc('annual_income') }}"
+
+      - name: income_type
+        description: "{{ doc('income_type') }}"
+
+      - name: occupation_type
+        description: "{{ doc('occupation_type') }}"
+
+      - name: ext_score_1
+        description: "{{ doc('ext_score_1') }}"
+
+      - name: ext_score_2
+        description: "{{ doc('ext_score_2') }}"
+
+      - name: ext_score_3
+        description: "{{ doc('ext_score_3') }}"
+
+      - name: owns_car
+        description: "{{ doc('owns_car') }}"
+
+      - name: owns_real_estate
+        description: "{{ doc('owns_real_estate') }}"

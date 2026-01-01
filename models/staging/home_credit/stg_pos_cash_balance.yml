@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: stg_pos_cash_balance
+    description: 
+      Staged monthly point-of-sale and cash loan balance records.
+      One row per POS or cash loan per reporting month.
+
+    columns:
+      - name: prev_application_id
+        description: "{{ doc('prev_application_id') }}"
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+        tests:
+          - not_null
+
+      - name: months_from_application
+        description: "{{ doc('months_from_application') }}"
+
+      - name: contract_status
+        description: "{{ doc('contract_status') }}"
+
+      - name: installment_count
+        description: "{{ doc('installment_count') }}"
+
+      - name: future_installment_count
+        description: "{{ doc('future_installment_count') }}"
+
+      - name: days_past_due
+        description: "{{ doc('days_past_due') }}"
+
+      - name: days_past_due_at_default
+        description: "{{ doc('days_past_due_at_default') }}"
