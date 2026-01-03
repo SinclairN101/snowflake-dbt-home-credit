@@ -12,7 +12,7 @@ select
     name_housing_type as housing_type,
     cnt_fam_members as family_member_count,
     target as defaulted,
-     days_birth / -365.0 as age_years,
+     days_birth / -365.0 as age,
     case
         when days_employed < 0 then null
         else days_employed / 365.0
@@ -24,9 +24,9 @@ select
     occupation_type as occupation_type,
    
     -- external credit scores
-    ext_source_1 as ext_score_1,
-    ext_source_2 as ext_score_2,
-    ext_source_3 as ext_score_3,
+    round(ext_source_1, 0) as ext_score_1,
+    round(ext_source_2, 0) as ext_score_2,
+    round(ext_source_3, 0) as ext_score_3,
 
     -- boolean
     flag_own_car = 'Y' as owns_car,

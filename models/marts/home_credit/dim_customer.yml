@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: >
+      Dimension table containing stable customer attributes derived from the
+      current loan application. One row per customer.
+
+    columns:
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+        tests:
+          - not_null
+          - unique
+
+      - name: age_years
+        description: "{{ doc('age_years') }}"
+
+      - name: employment_years
+        description: "{{ doc('employment_years') }}"
+
+      - name: education_level
+        description: "{{ doc('education_level') }}"
+
+      - name: family_status
+        description: "{{ doc('family_status') }}"
+
+      - name: housing_type
+        description: "{{ doc('housing_type') }}"
+
+      - name: family_member_count
+        description: "{{ doc('family_member_count') }}"
+
+      - name: annual_income
+        description: "{{ doc('annual_income') }}"
+
+      - name: income_type
+        description: "{{ doc('income_type') }}"
+
+      - name: occupation_type
+        description: "{{ doc('occupation_type') }}"
+
+      - name: owns_car
+        description: "{{ doc('owns_car') }}"
+
+      - name: owns_real_estate
+        description: "{{ doc('owns_real_estate') }}"
+
+      - name: ext_score_1
+        description: "{{ doc('ext_score_1') }}"
+
+      - name: ext_score_2
+        description: "{{ doc('ext_score_2') }}"
+
+      - name: ext_score_3
+        description: "{{ doc('ext_score_3') }}"

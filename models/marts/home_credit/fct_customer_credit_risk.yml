@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: fct_customer_credit_risk
+    description: >
+      Fact table summarizing customer-level credit exposure, repayment behavior,
+      and default outcomes. One row per customer.
+
+    columns:
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_id
+
+      - name: current_credit_amount
+        description: "{{ doc('credit_amount') }}"
+
+      - name: current_annuity_amount
+        description: "{{ doc('annuity_amount') }}"
+
+      - name: bureau_credit_count
+        description: "{{ doc('credit_type') }}"
+
+      - name: total_bureau_credit_amount
+        description: "{{ doc('credit_amount') }}"
+
+      - name: total_bureau_debt_amount
+        description: "{{ doc('credit_amount_debt') }}"
+
+      - name: total_bureau_overdue_amount
+        description: "{{ doc('credit_amount_overdue') }}"
+
+      - name: total_credit_prolong_count
+        description: "{{ doc('credit_prolong_count') }}"
+
+      - name: max_bureau_days_past_due
+        description: "{{ doc('days_past_due_at_default') }}"
+
+      - name: avg_credit_card_balance
+        description: "{{ doc('balance_amount') }}"
+
+      - name: max_credit_card_balance
+        description: "{{ doc('balance_amount') }}"
+
+      - name: max_credit_card_limit
+        description: "{{ doc('credit_limit_amount') }}"
+
+      - name: total_credit_card_payments
+        description: "{{ doc('total_payment_amount') }}"
+
+      - name: total_credit_card_draws
+        description: "{{ doc('total_draw_amount') }}"
+
+      - name: max_credit_card_days_past_due
+        description: "{{ doc('days_past_due_at_default') }}"
+
+      - name: max_installment_count
+        description: "{{ doc('installment_count') }}"
+
+      - name: remaining_installment_count
+        description: "{{ doc('future_installment_count') }}"
+
+      - name: max_pos_days_past_due
+        description: "{{ doc('days_past_due_at_default') }}"
+
+      - name: defaulted
+        description: "{{ doc('defaulted') }}"
